@@ -10,17 +10,12 @@ module.exports = {
         path: path.resolve(__dirname, 'build'),
         filename: 'js/bundle.js',
     },
-
     devServer: {
-        static: path.join(__dirname, 'build'),
+        contentBase: path.join(__dirname, 'build'),
         // compress: true,
         port: 9911,
         open: true,
-        hot: false, 
-        liveReload: true,
-        devMiddleware: {
-            writeToDisk: true
-        }
+        writeToDisk: true
     },
 
     module: {
@@ -40,7 +35,7 @@ module.exports = {
                     // [sass-loader](/loaders/sass-loader)
                     'sass-loader',
                 ],
-            },,
+            },
             {
                 test: /\.(png|jpe?g|gif|svg)$/i,
                 use: [
